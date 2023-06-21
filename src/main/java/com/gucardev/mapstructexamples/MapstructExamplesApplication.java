@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class MapstructExamplesApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(MapstructExamplesApplication.class, args);
-	}
+  public static void main(String[] args) {
+    SpringApplication.run(MapstructExamplesApplication.class, args);
+  }
 
 }
