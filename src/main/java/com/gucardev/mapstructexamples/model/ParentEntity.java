@@ -3,6 +3,8 @@ package com.gucardev.mapstructexamples.model;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,4 +27,7 @@ public class ParentEntity {
 
   @OneToMany(mappedBy = "myParent", cascade = CascadeType.ALL, orphanRemoval = true)
   private List<ChildEntity> children;
+
+  @Enumerated(EnumType.STRING)
+  private ParentType parentType;
 }
