@@ -30,6 +30,13 @@ public interface ParentMapper {
   ParentEntity toEntityWithChildren(ParentRequest request);
 
   @AfterMapping
+  default void setParentType(ParentRequest request, @MappingTarget ParentEntity entity) {
+    if (request.getParentType() != null) {
+      entity.setParentType(request.getParentType());
+    }
+  }
+
+  @AfterMapping
   default void setChildren(ParentRequest request, @MappingTarget ParentEntity entity) {
     if (request.getChildren() != null) {
       entity.setChildren(
